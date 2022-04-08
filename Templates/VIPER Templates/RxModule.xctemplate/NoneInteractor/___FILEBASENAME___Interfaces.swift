@@ -26,11 +26,9 @@ protocol ___VARIABLE_moduleName___InteractorInterface: InteractorInterface {
 }
 
 enum ___VARIABLE_moduleName___ {
-
     struct ViewOutput {
     }
 
     struct ViewInput {
     }
-
 }
