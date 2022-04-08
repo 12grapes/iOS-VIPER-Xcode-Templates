@@ -13,12 +13,13 @@ import RxSwift
 import RxCocoa
 
 final class ___VARIABLE_moduleName___Presenter {
-    private unowned let view: ___VARIABLE_moduleName___ViewInterface
     private let interactor: ___VARIABLE_moduleName___InteractorInterface
     private let wireframe: ___VARIABLE_moduleName___WireframeInterface
 
-    init(view: ___VARIABLE_moduleName___ViewInterface, interactor: ___VARIABLE_moduleName___InteractorInterface, wireframe: ___VARIABLE_moduleName___WireframeInterface) {
-        self.view = view
+    init(
+        interactor: ___VARIABLE_moduleName___InteractorInterface,
+        wireframe: ___VARIABLE_moduleName___WireframeInterface
+    ) {
         self.interactor = interactor
         self.wireframe = wireframe
     }
