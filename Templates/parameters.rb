@@ -7,7 +7,7 @@ class Interface
 end
 
 class Complexity
-    attr_accessor :name, :generate_interactor, :generate_formatter
+    attr_accessor :name, :generate_interactor, :generate_formatter, :generate_view
 end
 
 module Initializable
@@ -85,7 +85,7 @@ class Complexity
     include Initializable
 
     def self.types
-        [simple, normal, hard]
+        [simple, normal, normalView, hard]
     end
 
     def self.default
@@ -96,7 +96,17 @@ class Complexity
         Complexity.new({
             name: "Interactor",
             generate_interactor: true,
-            generate_formatter: false
+            generate_formatter: false,
+            generate_view: false
+        })
+    end
+
+    def self.normalView
+        Complexity.new({
+            name: "InteractorAndView",
+            generate_interactor: true,
+            generate_formatter: false,
+            generate_view: true
         })
     end
 
@@ -104,7 +114,8 @@ class Complexity
         Complexity.new({
             name: "Simple",
             generate_interactor: false,
-            generate_formatter: false
+            generate_formatter: false,
+            generate_view: false
         })
     end
 
@@ -112,7 +123,8 @@ class Complexity
         Complexity.new({
             name: "InteractorAndFormatter",
             generate_interactor: true,
-            generate_formatter: true
+            generate_formatter: true,
+            generate_view: false
         })
     end
 end

@@ -15,10 +15,6 @@ import RxCocoa
 <% end -%>
 
 final class ___VARIABLE_moduleName___Presenter {
-
-    // MARK: - Private properties -
-
-    private unowned let view: ___VARIABLE_moduleName___ViewInterface
 <% if @complexity.generate_formatter -%>
     private let formatter: ___VARIABLE_moduleName___FormatterInterface
 <% end -%>
@@ -27,10 +23,9 @@ final class ___VARIABLE_moduleName___Presenter {
 <% end -%>
     private let wireframe: ___VARIABLE_moduleName___WireframeInterface
 
-    // MARK: - Lifecycle -
-
-    init(view: ___VARIABLE_moduleName___ViewInterface, <%= @complexity.generate_formatter ? 'formatter: ___VARIABLE_moduleName___FormatterInterface, ' : '' %><%= @complexity.generate_interactor ? 'interactor: ___VARIABLE_moduleName___InteractorInterface, ' : '' %>wireframe: ___VARIABLE_moduleName___WireframeInterface) {
-        self.view = view
+    init(
+        <%= @complexity.generate_formatter ? "formatter: ___VARIABLE_moduleName___FormatterInterface,\n        " : '' %><%= @complexity.generate_interactor ? "interactor: ___VARIABLE_moduleName___InteractorInterface,\n        " : '' %>wireframe: ___VARIABLE_moduleName___WireframeInterface
+    ) {
         <%- if @complexity.generate_formatter -%>
         self.formatter = formatter
         <%- end -%>
@@ -41,14 +36,10 @@ final class ___VARIABLE_moduleName___Presenter {
     }
 }
 
-// MARK: - Extensions -
-
 extension ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___PresenterInterface {
     <%- if @template.generate_io -%>
-
     func configure(with output: ___VARIABLE_moduleName___.ViewOutput) -> ___VARIABLE_moduleName___.ViewInput {
         <%- if @complexity.generate_formatter -%>
-
         let formatterInput = ___VARIABLE_moduleName___.FormatterInput()
 
         let formatterOutput = formatter.format(for: formatterInput)
@@ -56,6 +47,5 @@ extension ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___Presenter
         <%- end -%>
         return ___VARIABLE_moduleName___.ViewInput(<%= @complexity.generate_formatter ? 'models: formatterOutput' : '' %>)
     }
-
     <%- end -%>
 }

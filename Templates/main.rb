@@ -47,9 +47,15 @@ def generate_formatter(template, interface, complexity, source_folder, destinati
     generator.save "#{destination_folder}/___FILEBASENAME___Formatter.swift"
 end
 
-def generate_view(template, interface, complexity, source_folder, destination_folder)
+def generate_view_controller(template, interface, complexity, source_folder, destination_folder)
     generator = Generator.new("#{source_folder}/___FILEBASENAME___ViewController.swift.erb", template, interface, complexity)
     generator.save "#{destination_folder}/___FILEBASENAME___ViewController.swift"
+end
+
+def generate_view(template, interface, complexity, source_folder, destination_folder)
+    return unless complexity.generate_view
+    generator = Generator.new("#{source_folder}/___FILEBASENAME___View.swift.erb", template, interface, complexity)
+    generator.save "#{destination_folder}/___FILEBASENAME___View.swift"
 end
 
 def generate(template, interface, complexity)
@@ -62,6 +68,7 @@ def generate(template, interface, complexity)
     generate_presenter(template, interface, complexity, source_folder, destination_folder)
     generate_interactor(template, interface, complexity, source_folder, destination_folder)
     generate_formatter(template, interface, complexity, source_folder, destination_folder)
+    generate_view_controller(template, interface, complexity, source_folder, destination_folder)
     generate_view(template, interface, complexity, source_folder, destination_folder)
 end
 

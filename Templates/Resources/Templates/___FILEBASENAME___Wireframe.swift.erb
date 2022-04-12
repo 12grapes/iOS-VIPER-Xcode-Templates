@@ -15,17 +15,12 @@ import RxCocoa
 <% end -%>
 
 final class ___VARIABLE_moduleName___Wireframe: BaseWireframe {
-
 <% if !@interface.generate_xib -%>
-    // MARK: - Private properties -
-
     <%- if @interface.generate_sb -%>
     private let storyboard = UIStoryboard(name: "___VARIABLE_moduleName___", bundle: nil)
 
     <%- end -%>
 <% end -%>
-    // MARK: - Module setup -
-
     init() {
         <%- if @interface.generate_sb -%>
         let moduleViewController = storyboard.instantiateViewController(ofType: ___VARIABLE_moduleName___ViewController.self)
@@ -40,13 +35,12 @@ final class ___VARIABLE_moduleName___Wireframe: BaseWireframe {
         <%- if @complexity.generate_interactor -%>
         let interactor = ___VARIABLE_moduleName___Interactor()
         <%- end -%>
-        let presenter = ___VARIABLE_moduleName___Presenter(view: moduleViewController, <%= @complexity.generate_formatter ? 'formatter: formatter, ' : '' %><%= @complexity.generate_interactor ? 'interactor: interactor, ' : '' %>wireframe: self)
+        let presenter = ___VARIABLE_moduleName___Presenter(
+            <%= @complexity.generate_formatter ? "formatter: formatter,\n            " : '' %><%= @complexity.generate_interactor ? "interactor: interactor,\n            " : '' %>wireframe: self
+        )
         moduleViewController.presenter = presenter
     }
-
 }
-
-// MARK: - Extensions -
 
 extension ___VARIABLE_moduleName___Wireframe: ___VARIABLE_moduleName___WireframeInterface {
 }

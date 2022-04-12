@@ -41,7 +41,6 @@ protocol ___VARIABLE_moduleName___InteractorInterface: InteractorInterface {
 <% if @template.generate_io -%>
 
 enum ___VARIABLE_moduleName___ {
-
     struct ViewOutput {
     }
 
@@ -50,14 +49,13 @@ enum ___VARIABLE_moduleName___ {
         let models: FormatterOutput
         <%- end -%>
     }
-
     <%- if @complexity.generate_formatter -%>
+
     struct FormatterInput {
     }
 
     struct FormatterOutput {
     }
-
     <%- end -%>
 }
 <% end -%>

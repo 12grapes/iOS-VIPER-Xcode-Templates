@@ -13,7 +13,5 @@ import UIKit
 final class ___VARIABLE_moduleName___Formatter {
 }
 
-// MARK: - Extensions -
-
 extension ___VARIABLE_moduleName___Formatter: ___VARIABLE_moduleName___FormatterInterface {
 }
