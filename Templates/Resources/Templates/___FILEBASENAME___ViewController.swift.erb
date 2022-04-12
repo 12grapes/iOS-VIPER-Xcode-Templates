@@ -21,6 +21,14 @@ final class ___VARIABLE_moduleName___ViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     <%- end -%>
+    <%- if @complexity.generate_view -%>
+    private lazy var contentView = ___VARIABLE_moduleName___View()
+
+    override func loadView() {
+        view = contentView
+    }
+
+    <%- end -%>
     override func viewDidLoad() {
         super.viewDidLoad()
         <%- if @template.generate_io -%>
