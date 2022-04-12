@@ -11,20 +11,12 @@
 import UIKit
 
 final class ___VARIABLE_moduleName___ViewController: UIViewController {
-
-    // MARK: - Public properties -
-
     var presenter: ___VARIABLE_moduleName___PresenterInterface!
-
-    // MARK: - Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
-
-// MARK: - Extensions -
 
 extension ___VARIABLE_moduleName___ViewController: ___VARIABLE_moduleName___ViewInterface {
 }

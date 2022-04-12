@@ -23,11 +23,9 @@ protocol ___VARIABLE_moduleName___PresenterInterface: PresenterInterface {
 }
 
 enum ___VARIABLE_moduleName___ {
-
     struct ViewOutput {
     }
 
     struct ViewInput {
     }
-
 }

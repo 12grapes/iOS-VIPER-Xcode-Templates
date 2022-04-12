@@ -15,7 +15,9 @@ import RxCocoa
 final class ___VARIABLE_moduleName___Presenter {
     private let wireframe: ___VARIABLE_moduleName___WireframeInterface
 
-    init(wireframe: ___VARIABLE_moduleName___WireframeInterface) {
+    init(
+        wireframe: ___VARIABLE_moduleName___WireframeInterface
+    ) {
         self.wireframe = wireframe
     }
 }
