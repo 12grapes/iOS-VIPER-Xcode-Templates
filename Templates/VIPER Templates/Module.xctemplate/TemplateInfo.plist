@@ -65,6 +65,7 @@
 			<array>
 				<string>Simple</string>
 				<string>Interactor</string>
+				<string>InteractorAndView</string>
 				<string>InteractorAndFormatter</string>
 			</array>
 		</dict>
