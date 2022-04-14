@@ -15,9 +15,6 @@ import RxCocoa
 protocol ___VARIABLE_moduleName___WireframeInterface: WireframeInterface {
 }
 
-protocol ___VARIABLE_moduleName___ViewInterface: ViewInterface {
-}
-
 protocol ___VARIABLE_moduleName___PresenterInterface: PresenterInterface {
     func configure(with output: ___VARIABLE_moduleName___.ViewOutput) -> ___VARIABLE_moduleName___.ViewInput
 }

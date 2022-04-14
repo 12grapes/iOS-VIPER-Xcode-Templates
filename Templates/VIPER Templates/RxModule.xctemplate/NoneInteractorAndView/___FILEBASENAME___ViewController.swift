@@ -29,9 +29,6 @@ final class ___VARIABLE_moduleName___ViewController: UIViewController {
     }
 }
 
-extension ___VARIABLE_moduleName___ViewController: ___VARIABLE_moduleName___ViewInterface {
-}
-
 private extension ___VARIABLE_moduleName___ViewController {
     func setupView() {
         let output = ___VARIABLE_moduleName___.ViewOutput()

@@ -17,6 +17,3 @@ final class ___VARIABLE_moduleName___ViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-
-extension ___VARIABLE_moduleName___ViewController: ___VARIABLE_moduleName___ViewInterface {
-}
